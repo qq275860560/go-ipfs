@@ -108,6 +108,7 @@ func BaseRouting(experimentalDHTClient bool) interface{} {
 				Routing:  in.Router,
 			},
 			DHT:    dr,
+			DHTClient: dr,
 			BaseRT: dr,
 		}, nil
 	}

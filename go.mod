@@ -65,7 +65,7 @@ require (
 	github.com/libp2p/go-libp2p-core v0.8.5
 	github.com/libp2p/go-libp2p-discovery v0.5.0
 	github.com/libp2p/go-libp2p-http v0.2.0
-	github.com/libp2p/go-libp2p-kad-dht v0.11.2-0.20210423144619-c2ba30fdc0a7
+	github.com/libp2p/go-libp2p-kad-dht v0.11.2-0.20210430165637-02efa46144b1
 	github.com/libp2p/go-libp2p-kbucket v0.4.7
 	github.com/libp2p/go-libp2p-loggables v0.1.0
 	github.com/libp2p/go-libp2p-mplex v0.4.1
@@ -80,6 +80,7 @@ require (
 	github.com/libp2p/go-libp2p-testing v0.4.0
 	github.com/libp2p/go-libp2p-tls v0.1.3
 	github.com/libp2p/go-libp2p-yamux v0.5.1
+	github.com/libp2p/go-sockaddr v0.1.1-0.20210422082532-e4f0a92fd001 // indirect
 	github.com/libp2p/go-socket-activation v0.0.2
 	github.com/libp2p/go-tcp-transport v0.2.1
 	github.com/libp2p/go-ws-transport v0.4.0

@@ -82,19 +82,34 @@ var queryDhtCmd = &cmds.Command{
 		defer cancel()
 		ctx, events := routing.RegisterForQueryEvents(ctx)
 
-		if d, ok := nd.DHTClient.(kademlia); ok {
-			peers, err := d.GetClosestPeers(ctx, string(id))
-			if err != nil {
-				return err
+		client := nd.DHTClient
+		if client == nd.DHT {
+			client = nd.DHT.WAN
+			if !nd.DHT.WANActive() {
+				client = nd.DHT.LAN
 			}
+		}
 
+		if d, ok := client.(kademlia); !ok {
+			return fmt.Errorf("dht client does not support GetClosestPeers")
+		} else {
+			errCh := make(chan error, 1)
 			go func() {
+				defer close(errCh)
 				defer cancel()
-				for _, p := range peers {
-					routing.PublishQueryEvent(ctx, &routing.QueryEvent{
-						ID:   p,
-						Type: routing.FinalPeer,
-					})
+				closestPeers, err := d.GetClosestPeers(ctx, string(id))
+				if closestPeers != nil {
+					for _, p := range closestPeers {
+						routing.PublishQueryEvent(ctx, &routing.QueryEvent{
+							ID:   p,
+							Type: routing.FinalPeer,
+						})
+					}
+				}
+
+				if err != nil {
+					errCh <- err
+					return
 				}
 			}()
 
@@ -104,41 +119,8 @@ var queryDhtCmd = &cmds.Command{
 				}
 			}
 
-			return nil
+			return <-errCh
 		}
-
-		dht := nd.DHT.WAN
-		if !nd.DHT.WANActive() {
-			dht = nd.DHT.LAN
-		}
-
-		errCh := make(chan error, 1)
-		go func() {
-			defer close(errCh)
-			defer cancel()
-			closestPeers, err := dht.GetClosestPeers(ctx, string(id))
-			if closestPeers != nil {
-				for p := range closestPeers {
-					routing.PublishQueryEvent(ctx, &routing.QueryEvent{
-						ID:   p,
-						Type: routing.FinalPeer,
-					})
-				}
-			}
-
-			if err != nil {
-				errCh <- err
-				return
-			}
-		}()
-
-		for e := range events {
-			if err := res.Emit(e); err != nil {
-				return err
-			}
-		}
-
-		return <-errCh
 	},
 	Encoders: cmds.EncoderMap{
 		cmds.Text: cmds.MakeTypedEncoder(func(req *cmds.Request, w io.Writer, out *routing.QueryEvent) error {

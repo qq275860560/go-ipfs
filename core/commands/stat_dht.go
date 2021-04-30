@@ -107,6 +107,7 @@ This interface is not stable and may change from release to release.
 						info.Connected = nd.PeerHost.Network().Connectedness(p) == network.Connected
 						b.Peers = append(b.Peers, info)
 					}
+					buckets[0] = *b
 
 					if err := res.Emit(dhtStat{
 						Name:    name,

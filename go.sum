@@ -655,8 +655,8 @@ github.com/libp2p/go-libp2p-interface-connmgr v0.0.4/go.mod h1:GarlRLH0LdeWcLnYM
 github.com/libp2p/go-libp2p-interface-connmgr v0.0.5/go.mod h1:GarlRLH0LdeWcLnYM/SaBykKFl9U5JFnbBGruAk/D5k=
 github.com/libp2p/go-libp2p-interface-pnet v0.0.1/go.mod h1:el9jHpQAXK5dnTpKA4yfCNBZXvrzdOU75zz+C6ryp3k=
 github.com/libp2p/go-libp2p-kad-dht v0.11.1/go.mod h1:5ojtR2acDPqh/jXf5orWy8YGb8bHQDS+qeDcoscL/PI=
-github.com/libp2p/go-libp2p-kad-dht v0.11.2-0.20210423144619-c2ba30fdc0a7 h1:QRudCSoOvGdpFWiQT5xtrx4U1xL5AlBoSQAEPHGNdGA=
-github.com/libp2p/go-libp2p-kad-dht v0.11.2-0.20210423144619-c2ba30fdc0a7/go.mod h1:70Vb+iJYLz73XYdBNavDHHMj1nLdvDdKKVkV6AUY2QI=
+github.com/libp2p/go-libp2p-kad-dht v0.11.2-0.20210430165637-02efa46144b1 h1:AFesLVmfe/shQ7ZcJjmA2zDNd4dqxOZ0z2MTo84ZzJ4=
+github.com/libp2p/go-libp2p-kad-dht v0.11.2-0.20210430165637-02efa46144b1/go.mod h1:70Vb+iJYLz73XYdBNavDHHMj1nLdvDdKKVkV6AUY2QI=
 github.com/libp2p/go-libp2p-kbucket v0.3.1/go.mod h1:oyjT5O7tS9CQurok++ERgc46YLwEpuGoFq9ubvoUOio=
 github.com/libp2p/go-libp2p-kbucket v0.4.7 h1:spZAcgxifvFZHBD8tErvppbnNiKA5uokDu3CV7axu70=
 github.com/libp2p/go-libp2p-kbucket v0.4.7/go.mod h1:XyVo99AfQH0foSf176k4jY1xUJ2+jUJIZCSDm7r2YKk=
@@ -804,8 +804,9 @@ github.com/libp2p/go-reuseport-transport v0.0.2/go.mod h1:YkbSDrvjUVDL6b8XqriyA2
 github.com/libp2p/go-reuseport-transport v0.0.3/go.mod h1:Spv+MPft1exxARzP2Sruj2Wb5JSyHNncjf1Oi2dEbzM=
 github.com/libp2p/go-reuseport-transport v0.0.4 h1:OZGz0RB620QDGpv300n1zaOcKGGAoGVf8h9txtt/1uM=
 github.com/libp2p/go-reuseport-transport v0.0.4/go.mod h1:trPa7r/7TJK/d+0hdBLOCGvpQQVOU74OXbNCIMkufGw=
-github.com/libp2p/go-sockaddr v0.0.2 h1:tCuXfpA9rq7llM/v834RKc/Xvovy/AqM9kHvTV/jY/Q=
 github.com/libp2p/go-sockaddr v0.0.2/go.mod h1:syPvOmNs24S3dFVGJA1/mrqdeijPxLV2Le3BRLKd68k=
+github.com/libp2p/go-sockaddr v0.1.1-0.20210422082532-e4f0a92fd001 h1:K2YJ/n550+Fps5CWSNDuepFcdbc2YxP29CWJabY+8BY=
+github.com/libp2p/go-sockaddr v0.1.1-0.20210422082532-e4f0a92fd001/go.mod h1:syPvOmNs24S3dFVGJA1/mrqdeijPxLV2Le3BRLKd68k=
 github.com/libp2p/go-socket-activation v0.0.2 h1:VLU3IbrUUqu4DMhxA9857Q63qUpEAbCz5RqSnLCx5jE=
 github.com/libp2p/go-socket-activation v0.0.2/go.mod h1:KP44C+yZ7gA8sTxavgaD0b8vXVFJwam2CEW0s7+f094=
 github.com/libp2p/go-stream-muxer v0.0.1/go.mod h1:bAo8x7YkSpadMTbtTaxGVHWUQsR/l5MEaHbKaliuT14=
